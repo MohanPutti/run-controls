@@ -1,0 +1,4 @@
+setopt hist_ignore_dups share_history HIST_IGNORE_SPACE APPEND_HISTORY EXTENDED_HISTORY interactivecomments
+HISTFILE=~/.zsh_history
+SAVEHIST=100000
+HISTSIZE=100000
