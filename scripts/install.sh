@@ -18,6 +18,10 @@ grep -qF "# run-controls" ~/.zshrc 2>/dev/null || echo "$LINE" >> ~/.zshrc
 # Global gitignore, only if you have not set one
 [ -n "$(git config --global core.excludesfile)" ] || git config --global core.excludesfile "$ROOT/git/gitignore_global"
 
+# tmux config, only if you have none
+mkdir -p ~/.config/tmux
+[ -e ~/.config/tmux/tmux.conf ] || [ -e ~/.tmux.conf ] || ln -s "$ROOT/tmux/tmux.conf" ~/.config/tmux/tmux.conf
+
 # Include our git settings without overwriting yours
 git config --global --get-all include.path | grep -qF "$ROOT/git/config" || git config --global --add include.path "$ROOT/git/config"
 

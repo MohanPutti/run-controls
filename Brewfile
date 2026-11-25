@@ -17,6 +17,7 @@ brew "bat"          # cat with syntax highlighting
 brew "delta"        # readable git diffs
 brew "atuin"        # history search by directory and exit status (local only)
 brew "direnv"       # per-repo env vars, pairs with mise
+brew "tmux"         # parallel sessions that survive closed terminals
 
 # Apps
 cask "clipy"        # clipboard history
@@ -24,4 +25,4 @@ cask "docker"       # Docker Desktop (docker compose)
 cask "iterm2"       # terminal
 cask "visual-studio-code"  # editor
 
-# Optional: k9s, kubectx, eza, tmux, just, git-absorb, watchexec
+# Optional: k9s, kubectx, eza, just, git-absorb, watchexec

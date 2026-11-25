@@ -19,6 +19,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 |---|---|
 | `Brewfile` | CLI tools and apps |
 | `shell/` | Aliases, history, tool init and helper functions, sourced from `~/.zshrc` |
+| `tmux/tmux.conf` | Minimal tmux config, linked only if you have none |
 | `git/config` | Git settings included from `~/.gitconfig` (no name or email) |
 | `git/gitignore_global` | Global ignore file |
 | `scripts/install.sh` | Installs the Brewfile and wires zsh and git |
@@ -27,7 +28,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 ## What you get
 
-**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`.
+**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`.
 **Apps:** Clipy, Docker Desktop, iTerm2, Visual Studio Code.
 
 **Aliases:** `g` git, `k` kubectl, `kctxs` list contexts, `be`/`rs`/`rc`/`rt` for bundle exec, rails server, rails console and rspec, `dc` docker compose, `cat` is `bat`.
@@ -51,4 +52,4 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 - Apps you already installed by hand may need `brew install --cask <name> --adopt` so brew takes them over.
 - `macos.sh` changes system settings; log out and back in afterwards. Undo a line with `defaults delete NSGlobalDomain <key>`.
 - No secrets, tokens, cloud profiles or kube configs live here.
-- Optional extras, not installed by default: `k9s`, `kubectx`, `eza`, `tmux`, `just`, `git-absorb`, `watchexec`.
+- Optional extras, not installed by default: `k9s`, `kubectx`, `eza`, `just`, `git-absorb`, `watchexec`.
