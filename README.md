@@ -28,10 +28,10 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 ## What you get
 
-**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`.
+**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`, `k9s`.
 **Apps:** Clipy, Docker Desktop, iTerm2, Visual Studio Code.
 
-**Aliases:** `g` git, `k` kubectl, `kctxs` list contexts, `be`/`rs`/`rc`/`rt` for bundle exec, rails server, rails console and rspec, `dc` docker compose, `cat` is `bat`.
+**Aliases:** `g` git, `k` kubectl, `kctxs` list contexts, `k9` read-only k9s, `be`/`rs`/`rc`/`rt` for bundle exec, rails server, rails console and rspec, `dc` docker compose, `cat` is `bat`.
 
 **Helpers:**
 
@@ -43,6 +43,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 | `newbranch <name>` | Create a branch from a fresh `origin/main` |
 | `gsw` | Fuzzy-switch a local branch |
 | `repo <name>` | `cd` into `$REPOS_DIR/<name>` (default `~/code`) |
+| `setp <dir>` | Prepend a directory to `PATH` if it exists and is not already there |
 | `pr` | Open the current branch's PR in the browser |
 | `vpn [up\|down\|status\|log]` | Connect or disconnect the Pritunl VPN (prompts for password/OTP); `ctrl-x v` connects. Set `VPN_PROFILE` to pick a profile |
 

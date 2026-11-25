@@ -18,3 +18,6 @@ gsw() { local b; b=$(git branch --format='%(refname:short)' | fzf --height 40% -
 
 # Pick a pod interactively and tail its logs. Usage: kpod <namespace>
 kpod() { local p; p=$(kubectl get pods -n "$1" --no-headers -o custom-columns=:metadata.name | fzf --height 40% --reverse) && kubectl logs -f -n "$1" "$p"; }
+
+# Prepend a directory to PATH if it exists and is not already there. Usage: setp <dir>
+setp() { [ -d "$1" ] && case ":$PATH:" in *":$1:"*) ;; *) export PATH="$1:$PATH" ;; esac; }

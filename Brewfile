@@ -18,6 +18,7 @@ brew "delta"        # readable git diffs
 brew "atuin"        # history search by directory and exit status (local only)
 brew "direnv"       # per-repo env vars, pairs with mise
 brew "tmux"         # parallel sessions that survive closed terminals
+brew "k9s"          # terminal UI for the cluster (use k9 for read-only)
 
 # Apps
 cask "clipy"        # clipboard history
@@ -25,4 +26,4 @@ cask "docker"       # Docker Desktop (docker compose)
 cask "iterm2"       # terminal
 cask "visual-studio-code"  # editor
 
-# Optional: k9s, kubectx, eza, just, git-absorb, watchexec
+# Optional: kubectx, eza, just, git-absorb, watchexec
