@@ -14,4 +14,7 @@ brew "fzf"          # fuzzy history (ctrl-r), file and branch picking
 brew "zoxide"       # `z repo-name` jumps to repos you've visited
 brew "fd"           # fast file find
 brew "bat"          # cat with syntax highlighting
-# Optional: k9s, kubectx, eza, tmux, just, direnv
+brew "delta"        # readable git diffs
+brew "atuin"        # history search by directory and exit status (local only)
+brew "direnv"       # per-repo env vars, pairs with mise
+# Optional: k9s, kubectx, eza, tmux, just, git-absorb, watchexec

@@ -12,3 +12,9 @@ repo() { cd "${REPOS_DIR:-$HOME/code}/$1" 2>/dev/null || echo "no such repo: $1"
 
 # Open the current branch's PR in the browser
 pr() { gh pr view --web; }
+
+# Fuzzy-switch local branch (needs fzf)
+gsw() { local b; b=$(git branch --format='%(refname:short)' | fzf --height 40% --reverse) && git switch "$b"; }
+
+# Pick a pod interactively and tail its logs. Usage: kpod <namespace>
+kpod() { local p; p=$(kubectl get pods -n "$1" --no-headers -o custom-columns=:metadata.name | fzf --height 40% --reverse) && kubectl logs -f -n "$1" "$p"; }

@@ -4,8 +4,8 @@
 ok()   { printf "  ok    %s\n" "$1"; }
 bad()  { printf "  FAIL  %s\n" "$1"; }
 
-for t in git gh aws kubectl mise rg; do
-  command -v "$t" >/dev/null && ok "$t installed" || bad "$t missing (run scripts/install.sh)"
+for t in git gh aws kubectl mise rg fzf delta; do
+  command -v "$t" >/dev/null 2>&1 || type "$t" >/dev/null 2>&1 && ok "$t installed" || bad "$t missing (run scripts/install.sh)"
 done
 
 gh auth status >/dev/null 2>&1 && ok "gh logged in" || bad "gh not logged in (gh auth login)"
