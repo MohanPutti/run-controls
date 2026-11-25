@@ -7,6 +7,14 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 command -v brew >/dev/null || { echo "Install Homebrew first: https://brew.sh"; exit 1; }
 brew bundle --file="$ROOT/Brewfile"
 
+# GUI apps: skip any already present in /Applications (installed by hand), never fail the run
+while read -r cask; do
+  app=$(brew info --cask --json=v2 "$cask" 2>/dev/null | jq -r '.casks[0].artifacts[] | select(.app) | .app[0]' 2>/dev/null | head -1)
+  if [ -n "$app" ] && [ -e "/Applications/$app" ]; then echo "skip $cask (already in /Applications)"; continue; fi
+  brew list --cask "$cask" >/dev/null 2>&1 && { echo "skip $cask (brew-managed)"; continue; }
+  brew install --cask "$cask" || echo "warning: $cask failed, install it by hand"
+done < <(grep -oE '^cask "[^"]+"' "$ROOT/Brewfile.apps" | cut -d'"' -f2)
+
 # Back up files we are about to touch (once)
 for f in ~/.zshrc ~/.gitconfig; do
   [ -f "$f" ] && [ ! -f "$f.pre-run-controls" ] && cp "$f" "$f.pre-run-controls"

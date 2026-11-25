@@ -17,7 +17,8 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 | Path | What it does |
 |---|---|
-| `Brewfile` | CLI tools and apps |
+| `Brewfile` | CLI tools |
+| `Brewfile.apps` | GUI apps; `install.sh` skips ones already in `/Applications` |
 | `shell/` | Aliases, history, tool init and helper functions, sourced from `~/.zshrc` |
 | `tmux/tmux.conf` | Minimal tmux config, linked only if you have none |
 | `git/config` | Git settings included from `~/.gitconfig` (no name or email) |
@@ -51,7 +52,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 ## Notes
 
-- Apps you already installed by hand may need `brew install --cask <name> --adopt` so brew takes them over.
+- Apps already in `/Applications` are skipped, not reinstalled. To hand one over to brew, quit it and run `brew install --cask <name> --adopt`.
 - `macos.sh` changes system settings; log out and back in afterwards. Undo a line with `defaults delete NSGlobalDomain <key>`.
 - No secrets, tokens, cloud profiles or kube configs live here.
 - Optional extras, not installed by default: `k9s`, `kubectx`, `eza`, `just`, `git-absorb`, `watchexec`.

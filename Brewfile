@@ -20,10 +20,4 @@ brew "direnv"       # per-repo env vars, pairs with mise
 brew "tmux"         # parallel sessions that survive closed terminals
 brew "k9s"          # terminal UI for the cluster (use k9 for read-only)
 
-# Apps
-cask "clipy"        # clipboard history
-cask "docker"       # Docker Desktop (docker compose)
-cask "iterm2"       # terminal
-cask "visual-studio-code"  # editor
-
 # Optional: kubectx, eza, just, git-absorb, watchexec
