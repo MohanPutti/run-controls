@@ -3,9 +3,9 @@
 # Undo any line with: defaults delete <domain> <key>
 set -euo pipefail
 
-# Keyboard: fast repeat, short delay, hold-to-repeat instead of accent popup
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Keyboard: fastest repeat (1 = 15 ms), short delay (10 = 150 ms; System Settings minimum is 15), hold-to-repeat
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Typing: no auto-correct, smart quotes or dashes (they corrupt code and commands)
