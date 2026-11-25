@@ -17,4 +17,8 @@ brew "bat"          # cat with syntax highlighting
 brew "delta"        # readable git diffs
 brew "atuin"        # history search by directory and exit status (local only)
 brew "direnv"       # per-repo env vars, pairs with mise
+
+# Apps
+cask "clipy"        # clipboard history
+
 # Optional: k9s, kubectx, eza, tmux, just, git-absorb, watchexec
