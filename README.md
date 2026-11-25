@@ -29,8 +29,8 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 ## What you get
 
-**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`, `k9s`.
-**Apps:** Clipy, Docker Desktop, iTerm2, Visual Studio Code.
+**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`, `k9s`, `starship`.
+**Apps:** Clipy, Docker Desktop, iTerm2, Hack Nerd Font, Visual Studio Code.
 
 **Aliases:** `g` git, `k` kubectl, `kctxs` list contexts, `k9` read-only k9s, `be`/`rs`/`rc`/`rt` for bundle exec, rails server, rails console and rspec, `dc` docker compose, `cat` is `bat`.
 

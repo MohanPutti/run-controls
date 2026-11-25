@@ -18,6 +18,7 @@ brew "delta"        # readable git diffs
 brew "atuin"        # history search by directory and exit status (local only)
 brew "direnv"       # per-repo env vars, pairs with mise
 brew "tmux"         # parallel sessions that survive closed terminals
+brew "starship"     # prompt: git branch, exit status, kube context off by default
 brew "k9s"          # terminal UI for the cluster (use k9 for read-only)
 
 # Optional: kubectx, eza, just, git-absorb, watchexec

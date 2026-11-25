@@ -1,5 +1,6 @@
 # GUI apps, installed one by one by install.sh. Apps already in /Applications are skipped.
 cask "clipy"        # clipboard history
 cask "docker"       # Docker Desktop (docker compose)
+cask "font-hack-nerd-font"  # set as the font in iTerm for icons
 cask "iterm2"       # terminal
 cask "visual-studio-code"  # editor
