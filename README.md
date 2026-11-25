@@ -44,6 +44,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 | `gsw` | Fuzzy-switch a local branch |
 | `repo <name>` | `cd` into `$REPOS_DIR/<name>` (default `~/code`) |
 | `pr` | Open the current branch's PR in the browser |
+| `vpn [up\|down\|status\|log]` | Connect or disconnect the Pritunl VPN (prompts for password/OTP); `ctrl-x v` connects. Set `VPN_PROFILE` to pick a profile |
 
 **Git settings:** rebase on pull, auto-set upstream on push, prune on fetch, auto-stash on rebase, `rerere`, histogram diffs, `delta` pager.
 
