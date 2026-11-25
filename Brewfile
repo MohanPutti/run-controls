@@ -20,5 +20,8 @@ brew "direnv"       # per-repo env vars, pairs with mise
 
 # Apps
 cask "clipy"        # clipboard history
+cask "docker"       # Docker Desktop (docker compose)
+cask "iterm2"       # terminal
+cask "visual-studio-code"  # editor
 
 # Optional: k9s, kubectx, eza, tmux, just, git-absorb, watchexec
