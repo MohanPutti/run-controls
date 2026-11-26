@@ -20,5 +20,6 @@ brew "direnv"       # per-repo env vars, pairs with mise
 brew "tmux"         # parallel sessions that survive closed terminals
 brew "starship"     # prompt: git branch, exit status, kube context off by default
 brew "k9s"          # terminal UI for the cluster (use k9 for read-only)
+brew "gitleaks"     # scan for committed secrets: gitleaks detect, or gitleaks protect --staged
 
 # Optional: kubectx, eza, just, git-absorb, watchexec

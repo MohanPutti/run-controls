@@ -29,7 +29,7 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 ## What you get
 
-**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`, `k9s`, `starship`.
+**Tools:** `awscli`, `kubectl`, `mise`, `gh`, `ripgrep`, `fzf`, `zoxide`, `fd`, `bat`, `delta`, `atuin`, `direnv`, `tmux`, `k9s`, `starship`, `gitleaks`.
 **Apps:** Clipy, Docker Desktop, iTerm2, Hack Nerd Font, Visual Studio Code.
 
 **Aliases:** `g` git, `k` kubectl, `kctxs` list contexts, `k9` read-only k9s, `be`/`rs`/`rc`/`rt` for bundle exec, rails server, rails console and rspec, `dc` docker compose, `cat` is `bat`.
@@ -50,9 +50,22 @@ Open a new terminal afterwards. `install.sh` is idempotent and backs up `~/.zshr
 
 **Git settings:** rebase on pull, auto-set upstream on push, prune on fetch, auto-stash on rebase, `rerere`, histogram diffs, `delta` pager.
 
+## Secret scanning
+
+A global pre-commit hook runs `gitleaks` on staged changes and blocks the commit if it finds a secret. It then runs the repo's own `.git/hooks` as usual. Bypass once with `SKIP_GITLEAKS=1 git commit ...`. Skipped if you already set a global `core.hooksPath`.
+
+## Optional: app and Chrome-profile hotkeys (Hammerspoon)
+
+Not installed by default. Run `scripts/install.sh --with-hammerspoon` (or answer `y` at the prompt).
+
+- `⌥1` iTerm, `⌥2` Chrome, `⌥3` VS Code, `⌥4` Slack, `⌥5` Claude, `⌥6` Docker, `⌥7` WhatsApp, `⌥8` Pritunl: focus or launch; press again to hide. `⌥R` reloads the config.
+- Windows: `⌃⌥` + arrows snap to halves, `⌃⌥↩` maximize, `⌃⌥C` center, `⌃⌥N` next screen.
+- Chrome profiles: add them to `~/.config/run-controls/hammerspoon.lua` (created from `hammerspoon/local.example.lua`, never committed). Use `⌥9` and `⌥0`; the key focuses that profile's window, or opens it.
+- One-time: open Hammerspoon and grant Accessibility in System Settings > Privacy & Security.
+
 ## Notes
 
 - Apps already in `/Applications` are skipped, not reinstalled. To hand one over to brew, quit it and run `brew install --cask <name> --adopt`.
 - `macos.sh` changes system settings; log out and back in afterwards. Undo a line with `defaults delete NSGlobalDomain <key>`.
 - No secrets, tokens, cloud profiles or kube configs live here.
-- Optional extras, not installed by default: `k9s`, `kubectx`, `eza`, `just`, `git-absorb`, `watchexec`.
+- Optional extras, not installed by default: `kubectx`, `eza`, `just`, `git-absorb`, `watchexec`.

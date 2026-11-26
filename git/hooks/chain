@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Global hook shim: run the repo's own hook of the same name, so a global hooksPath never silences it.
+hook="$(git rev-parse --git-common-dir)/hooks/$(basename "$0")"
+[ -x "$hook" ] && exec "$hook" "$@"
+exit 0

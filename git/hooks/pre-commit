@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Block commits that contain secrets (gitleaks), then run the repo's own pre-commit.
+# Bypass once with SKIP_GITLEAKS=1 git commit ...
+if [ -z "${SKIP_GITLEAKS:-}" ] && command -v gitleaks >/dev/null; then
+  gitleaks git --pre-commit --staged --redact --no-banner || {
+    echo "gitleaks: possible secret staged. Remove it, or bypass once with SKIP_GITLEAKS=1." >&2
+    exit 1
+  }
+fi
+hook="$(git rev-parse --git-common-dir)/hooks/pre-commit"
+[ -x "$hook" ] && exec "$hook" "$@"
+exit 0
